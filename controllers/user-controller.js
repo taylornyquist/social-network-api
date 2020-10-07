@@ -71,6 +71,26 @@ const userController = {
             .catch(err => res.status(400).json(err));
     },
 
+       // delete user and pull all thoughts???
+//    deleteUser({ params }, res) {
+//     User.findOneAndDelete({ _id: params.id })
+//         .then(dbUserData => {
+//             if (!dbUserData) {
+//                 res.status(404).json({ message: 'No user found with this id!' });
+//                 return;
+//             }
+//             return User.findOneAndUpdate(
+//                 { _id: params.id },
+//                 { $pull: { thoughts: [] } },
+//                 { new: true }
+//             );
+//         })
+//         .then(dbUserData => {
+//             res.json(dbUserData);
+//         })
+//         .catch(err => res.status(400).json(err));
+// },
+
       // add friend to a user
       addFriendById({ params }, res) {
         User.findOneAndUpdate(

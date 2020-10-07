@@ -99,6 +99,7 @@ const thoughtController = {
     },
 
     // add reaction to a thought
+    // why does reaction have both reactionId and _id/id???
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
