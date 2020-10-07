@@ -14,20 +14,37 @@ const {
 router
     .route('/')
     .get(getAllThoughts)
+
+//  /api/thoughts/:userId
+// still not sure about this one
+// should it the userId be in the params or the body???
+router
+    .route('/:userId')
     .post(createThought)
+
 
 //  /api/thoughts/<thoughtId>
 router
-    .route('/:id')
+    .route('/:thoughtId')
     .get(getThoughtById)
     .put(updateThought)
+
+//  /api/thoughts/<userid>/<thoughtId>
+// maybe use this???
+router
+    .route('/:userId/:thoughtId')
     .delete(deleteThought)
 
-//  /api/thoughts/:id/reactions
-// not sure abou this section...
+// not sure about this section...
+//  /api/thoughts/:thoughtId/reactions/
 router
-    .route(':id/reactions')
+    .route('/:thoughtId/reactions')
     .post(addReaction)
+
+//  /api/thoughts/:thoughtId/reactions/:reactionId
+
+router
+    .route(':thoughtId/reactions/:reactionId')
     .delete(deleteReaction)
 
 module.exports = router;

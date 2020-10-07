@@ -46,7 +46,7 @@ const ThoughtSchema = new Schema(
         // the user that created this thought
         username: {
             type: String,
-            required: true           
+            required: [true, 'Please enter the username']     
         },
         // use ReactionSchema to validate data for a reaction
         reactions: [ReactionSchema]
